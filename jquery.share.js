@@ -48,27 +48,17 @@
               .replace("|d|", d)
               .replace("|140|", t.substring(0, 130));
             $(
-              "<a href='" +
-                href +
-                "' title='Share this page on " +
-                item +
-                "' class='pop share-" +
-                theme +
-                " share-" +
-                theme +
-                "-" +
-                item +
-                "'></a>",
+              `<a href=${href} title='Share this page on ${item}' class='pop share-${theme} share-${theme}-${item}'></a>`,
             ).appendTo($element);
           }
 
           // customize css
-          $("#" + id + ".share-" + theme).css("margin", margin);
+          $(`#${id}.share-${theme}`).css("margin", margin);
 
           if (orientation != "horizontal") {
-            $("#" + id + " a.share-" + theme).css("display", "block");
+            $(`#${id} a.share-${theme}`).css("display", "block");
           } else {
-            $("#" + id + " a.share-" + theme).css("display", "inline-block");
+            $(`#${id} a.share-${theme}`).css("display", "inline-block");
           }
 
           if (typeof affix != "undefined") {
@@ -139,7 +129,7 @@
     } else if (typeof method === "object" || !method) {
       return methods.init.apply(this, arguments);
     } else {
-      $.error('Method "' + method + '" does not exist in social plugin');
+      $.error(`Method "${method}" does not exist in social plugin`);
     }
   };
 
