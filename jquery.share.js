@@ -100,7 +100,7 @@
       networkDefs: {
         facebook: { url: "http://www.facebook.com/share.php?u=|u|" },
         //http://twitter.com/home?status=jQuery%20Share%20Social%20Media%20Plugin%20-%20Share%20to%20multiple%20social%20networks%20from%20a%20single%20form%20http://plugins.in1.com/share/demo
-        twitter: { url: "https://twitter.com/share?url=|u|&text=|140|" },
+        twitter: { url: "https://x.com/share?url=|u|&text=|140|" },
         linkedin: {
           url: "http://www.linkedin.com/shareArticle?mini=true&url=|u|&title=|t|&summary=|d|",
         },
