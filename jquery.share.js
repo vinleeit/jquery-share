@@ -20,7 +20,7 @@
           affix = this.share.settings.affix,
           margin = this.share.settings.margin,
           pageTitle = this.share.settings.title || $(document).attr("title"),
-          pageUrl = this.share.settings.urlToShare || $(location).attr("href"),
+          pageUrl = this.share.settings.urlToShare || window.location.href,
           pageDesc = "";
         $.each(
           $(document).find('meta[name="description"]'),
@@ -28,7 +28,6 @@
             pageDesc = $(item).attr("content");
           },
         );
-        console.log(settings)
 
         // each instance of this plugin
         return this.each(function () {
@@ -40,8 +39,7 @@
             href;
 
           // append HTML for each network button
-          for (var item in networks) {
-            item = networks[item];
+          for (const item of networks) {
             href = helpers.networkDefs[item].url;
             href = href
               .replace("|u|", u)
@@ -49,24 +47,21 @@
               .replace("|d|", d)
               .replace("|140|", t.substring(0, 130));
             $(
-              `<a href=${href} title='Share this page on ${item}' class='pop share-${theme} share-${theme}-${item}'></a>`,
+              `<a href="${href}" title="Share this page on ${item}" class="pop share-${theme} share-${theme}-${item}"></a>`,
             ).appendTo($element);
           }
 
           // customize css
           $(`#${id}.share-${theme}`).css("margin", margin);
-
-          if (orientation != "horizontal") {
-            $(`#${id} a.share-${theme}`).css("display", "block");
-          } else {
-            $(`#${id} a.share-${theme}`).css("display", "inline-block");
-          }
+          $(`#${id} a.share-${theme}`).css("display", orientation !== "horizontal" ? "block" : "inline-block");
 
           if (typeof affix != "undefined") {
             $element.addClass("share-affix");
             if (affix.indexOf("right") != -1) {
-              $element.css("left", "auto");
-              $element.css("right", "0px");
+              $element.css({
+                left: "auto",
+                right: 0,
+              });
               if (affix.indexOf("center") != -1) {
                 $element.css("top", "40%");
               }
@@ -75,8 +70,10 @@
             }
 
             if (affix.indexOf("bottom") != -1) {
-              $element.css("bottom", "0px");
-              $element.css("top", "auto");
+              $element.css({
+                bottom: 0,
+                top: "auto",
+              });
               if (affix.indexOf("center") != -1) {
                 $element.css("left", "40%");
               }
@@ -84,7 +81,7 @@
           }
 
           // bind click
-          $(".pop").click(function () {
+          $(".pop").on("click", function () {
             window.open(
               $(this).attr("href"),
               "t",
@@ -114,7 +111,7 @@
         stumbleupon: {
           url: "http://www.stumbleupon.com/submit?url=|u|&title=|t|",
         },
-        email: { url: "mailto:?subject=|t|" },
+        email: { url: "mailto:?subject=|t|&body=|u|" },
       },
     };
 
@@ -126,7 +123,7 @@
     } else if (typeof method === "object" || !method) {
       return methods.init.apply(this, arguments);
     } else {
-      $.error(`Method "${method}" does not exist in social plugin`);
+      throw new Error(`Method "${method}" does not exist in social plugin`)
     }
   };
 
