@@ -106,9 +106,6 @@
         in1: { url: "http://www.in1.com/cast?u=|u|", w: "490", h: "529" },
         tumblr: { url: "http://www.tumblr.com/share?v=3&u=|u|" },
         digg: { url: "http://digg.com/submit?url=|u|&title=|t|" },
-        googleplus: {
-          url: "https://plusone.google.com/_/+1/confirm?hl=en&url=|u|",
-        },
         reddit: { url: "http://reddit.com/submit?url=|u|" },
         pinterest: {
           url: "http://pinterest.com/pin/create/button/?url=|u|&media=&description=|d|",

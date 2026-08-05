@@ -61,9 +61,6 @@
 .share-icon-pinterest {
     background-position: -349px 0;
 }
-.share-icon-googleplus {
-    background-position: -218px 0;
-}
 .share-icon-in1 {
     background-position: -482px 0;
 }
@@ -71,7 +68,7 @@
     background-position: -570px 0;
 }
 
-/**a.behance, a.delicious, a.deviantart, a.digg, a.dribbble, a.facebook, a.flickr, a.forrst, a.foursquare, a.googleplus, a.in1, a.instagram, a.lastfm, a.linkedin, a.pinterest, a.rss, a.skype, a.tumblr, a.twitter, a.vimeo, a.youtube {*/
+/**a.behance, a.delicious, a.deviantart, a.digg, a.dribbble, a.facebook, a.flickr, a.forrst, a.foursquare, a.in1, a.instagram, a.lastfm, a.linkedin, a.pinterest, a.rss, a.skype, a.tumblr, a.twitter, a.vimeo, a.youtube {*/
 .share-square {
     -moz-transition: all 0.2s linear 0s;
     background: url("images/social-icons.png") no-repeat scroll left top transparent;
@@ -134,12 +131,6 @@
 }
 .share-square-forrst:hover {
     background-position: -320px -77px;
-}
-.share-square-googleplus {
-    background-position: -288px -44px;
-}
-.share-square-googleplus:hover {
-    background-position: -288px -77px;
 }
 .share-square-in1 {
     background-position: -576px -44px;
