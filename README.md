@@ -9,12 +9,12 @@ Features
 ================
 
     - Share updates from multiple social networks from a single form
-    - Supports Facebook, Twitter, LinkedIn, Tumblr and In1.
+    - Supports Facebook, Twitter, LinkedIn and Tumblr.
     - Attractive buttons and multiple themes
     - Easy to implement with just a few lines of code
-    
+
 Examples
 ================
 
 [Click here for more information and examples][1]
-[1]: http://plugins.in1.com/share
+[1]: ~~http://plugins.in1.com/share~~

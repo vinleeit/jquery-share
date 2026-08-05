@@ -28,6 +28,7 @@
             pageDesc = $(item).attr("content");
           },
         );
+        console.log(settings)
 
         // each instance of this plugin
         return this.each(function () {
@@ -101,9 +102,8 @@
         //http://twitter.com/home?status=jQuery%20Share%20Social%20Media%20Plugin%20-%20Share%20to%20multiple%20social%20networks%20from%20a%20single%20form%20http://plugins.in1.com/share/demo
         twitter: { url: "https://twitter.com/share?url=|u|&text=|140|" },
         linkedin: {
-          url: "http://www.linkedin.com/shareArticle?mini=true&url=|u|&title=|t|&summary=|d|&source=in1.com",
+          url: "http://www.linkedin.com/shareArticle?mini=true&url=|u|&title=|t|&summary=|d|",
         },
-        in1: { url: "http://www.in1.com/cast?u=|u|", w: "490", h: "529" },
         tumblr: { url: "http://www.tumblr.com/share?v=3&u=|u|" },
         digg: { url: "http://digg.com/submit?url=|u|&title=|t|" },
         reddit: { url: "http://reddit.com/submit?url=|u|" },
@@ -136,7 +136,6 @@
     autoShow: true,
     margin: "3px",
     orientation: "horizontal",
-    useIn1: false,
   };
 
   $.fn.share.settings = {};
